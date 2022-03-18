@@ -21,6 +21,7 @@ router.get('/', function(req, res, next) {
   if (limit > 1)  {
     output = output.splice(offset, limit)
   }
+  res.header('Access-Control-Allow-Origin', '*')
   res.json(output)
 });
 
