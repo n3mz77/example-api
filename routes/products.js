@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
   const limit = parseInt(reqBody.limit) || 0
   const offset = parseInt(reqBody.offset) || 0
   const category = reqBody.category
-  let output = products
+  let output = products.map(item => item)
   if (category) {
     output = output.filter(item => item.category === category)
   }
